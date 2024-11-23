@@ -2,13 +2,22 @@
 import { db } from "./firebase.js";  // Importa la configuración de Firebase
 import { collection, addDoc, getDocs, deleteDoc, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"; 
 
-// Función para agregar datos a la colección "datos" en Firebase
+/**
+ * Función para agregar datos a la colección "datos" en Firebase
+ * 
+ * @param {Object} datos - Los datos que se agregarán a la colección "datos"
+ * @returns {Promise} Promesa que se resuelve cuando los datos son agregados exitosamente
+ */
 export let agregarDatos = async (datos) => {
     // Crea un nuevo documento en la colección "datos" con los datos proporcionados
     const docref = await addDoc(collection(db, "datos"), datos);
 }
 
-// Función para obtener todos los datos de la colección "datos" en Firebase
+/**
+ * Función para obtener todos los datos de la colección "datos" en Firebase
+ * 
+ * @returns {Promise<Array>} Promesa que devuelve un array con los datos de todos los documentos en la colección
+ */
 export let obtenerdatos = async () => {
     // Obtiene todos los documentos de la colección "datos"
     const querySnapshot = await getDocs(collection(db, "datos"));
@@ -37,13 +46,23 @@ export let obtenerdatos = async () => {
     return datoss;  // Retorna el array con los datos de todos los documentos
 }
 
-// Función para eliminar un documento por su ID
+/**
+ * Función para eliminar un documento por su ID
+ * 
+ * @param {string} iddatos - El ID del documento a eliminar
+ * @returns {Promise} Promesa que se resuelve cuando el documento es eliminado exitosamente
+ */
 export let eliminardatos = async (iddatos) => {
     // Elimina el documento con el ID proporcionado en la colección "datos"
     await deleteDoc(doc(db, "datos", iddatos));
 }
 
-// Función para obtener un solo documento por su ID
+/**
+ * Función para obtener un solo documento por su ID
+ * 
+ * @param {string} iddatos - El ID del documento a obtener
+ * @returns {Promise<Object>} Promesa que devuelve un objeto con los datos del documento solicitado
+ */
 export let obtenerdato = async (iddatos) => {
     // Referencia al documento con el ID proporcionado en la colección "datos"
     const docref = doc(db, "datos", iddatos);
@@ -68,7 +87,13 @@ export let obtenerdato = async (iddatos) => {
     return dato;  // Retorna el objeto con los datos del documento
 }
 
-// Función para actualizar un documento con nuevos datos
+/**
+ * Función para actualizar un documento con nuevos datos
+ * 
+ * @param {string} id - El ID del documento a actualizar
+ * @param {Object} d - El objeto con los nuevos datos a actualizar
+ * @returns {Promise} Promesa que se resuelve cuando los datos son actualizados exitosamente
+ */
 export let actualizardatos = async (id, d) => {
     try {
         // Referencia al documento que se quiere actualizar

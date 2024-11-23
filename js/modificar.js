@@ -1,14 +1,19 @@
-import { actualizardatos, obtenerdato } from "./promesas.js";  // Importa las funciones para obtener y actualizar datos en la base de datos
+// Importa las funciones para obtener y actualizar datos en la base de datos
+import { actualizardatos, obtenerdato } from "./promesas.js";  
 
 // Espera a que la página se cargue completamente
 window.addEventListener("load", () => {
     alert("llegue");  // Muestra un mensaje de alerta cuando la página cargue
-    let valores = window.location.search;  // Obtiene la cadena de parámetros de la URL
+
+    // Obtiene la cadena de parámetros de la URL (por ejemplo, "?id=123")
+    let valores = window.location.search;
     console.log(valores);  // Muestra los parámetros en la consola
 
-    const urlParams = new URLSearchParams(valores);  // Crea un objeto URLSearchParams a partir de los parámetros de la URL
-    
-    var id = urlParams.get("id");  // Obtiene el valor del parámetro "id" de la URL
+    // Crea un objeto URLSearchParams a partir de los parámetros de la URL
+    const urlParams = new URLSearchParams(valores);  
+
+    // Obtiene el valor del parámetro "id" de la URL
+    var id = urlParams.get("id");
     console.log(id);  // Muestra el "id" en la consola
 
     // Recuperar datos desde la base de datos y cargar el formulario
@@ -45,6 +50,7 @@ window.addEventListener("load", () => {
 
     // Selecciona el botón de actualizar
     let btnactualizar = document.getElementById("btnActualizar");
+
     // Agrega un evento al botón para cuando se haga clic
     btnactualizar.addEventListener("click", (e) => {
         e.preventDefault();  // Prevenir el envío por defecto del formulario

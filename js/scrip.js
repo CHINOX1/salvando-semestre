@@ -17,7 +17,12 @@ window.addEventListener("load", () => {
 
     let vdog = ""; // Variable global para almacenar la preferencia de edad del perro
 
-    // Función para validar los campos del formulario antes de enviarlo
+    /**
+     * Función para validar los campos del formulario antes de enviarlo.
+     * Verifica si todos los campos están completos y si los valores son válidos.
+     * 
+     * @returns {boolean} Devuelve true si el formulario es válido, de lo contrario, false.
+     */
     function validarFormulario() {
         let formularioValido = true;
         const ecachorro = document.getElementById("cachorro");
