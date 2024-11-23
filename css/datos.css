@@ -1,0 +1,49 @@
+table {
+    margin-top: 300px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+
+div{
+    text-align: center;
+}
+th{
+    border: 2px solid  #ddd;
+    padding: 12px;
+    text-align: left;
+    background-color: rgba(36, 80, 36, 0.575);
+    color: white;
+}
+tr{
+    border: 2px solid #ddd ;
+    padding: 12px;
+    text-align: center;
+    background-color: rgba(0, 231, 231, 0.425);
+    color: white;
+    
+}
+tr:hover{
+    background-color: #8f5151;
+}
+button{
+    background-color: green;
+    color: white;
+    width: 100%;
+    padding: 10px 10px;
+}
+body{
+    background-image: url(../imagenes/orejon2.jpg);
+}
+tr:nth-child(even){
+    background-color: #6f9e7681; 
+}
+a{
+    text-decoration: none;
+    padding: 10PX 10PX;
+    background-color: rgba(18, 51, 51, 0.781);
+    color: white;
+    border: SOLID;
+    border-radius: 20px;
+}
